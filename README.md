@@ -5,7 +5,7 @@ A web application for reporting and tracking fires in Cyprus, built with Go back
 ## Features
 
 - Simple name-based authentication with user/firefighter roles
-- Interactive map interface using Mapbox GL JS
+- Interactive map interface using Google Maps
 - Fire reporting with location selection on map
 - Real-time fire status tracking (reported, seen, closed)
 - Commenting system for collaborative discussion
@@ -23,14 +23,14 @@ A web application for reporting and tracking fires in Cyprus, built with Go back
 - Next.js 14 with App Router
 - TypeScript
 - Tailwind CSS
-- Mapbox GL JS / react-map-gl
+- Google Maps / @vis.gl/react-google-maps
 
 ## Prerequisites
 
 - Docker and Docker Compose (for PostgreSQL)
 - Go 1.21+ (for backend)
 - Node.js 18+ (for frontend)
-- Mapbox API key (free tier available at https://www.mapbox.com/)
+- Google Maps API key (optional for development, get one at https://console.cloud.google.com/)
 
 ## Setup Instructions
 
@@ -72,8 +72,8 @@ npm install
 # Copy environment variables
 cp .env.example .env.local
 
-# Edit .env.local and add your Mapbox token
-# NEXT_PUBLIC_MAPBOX_TOKEN=your_mapbox_token_here
+# Edit .env.local and add your Google Maps API key (optional for development)
+# NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_google_maps_api_key_here
 
 # Run the development server
 npm run dev
@@ -163,8 +163,8 @@ This system uses a simple name-based authentication without passwords. This is d
 ### Real-time Updates
 The application does not currently have real-time push notifications. Users need to refresh or navigate to see new updates. Consider adding WebSocket or Server-Sent Events for production deployment.
 
-### Mapbox API Limits
-The free tier of Mapbox provides 50,000 map loads per month. Monitor usage and upgrade if necessary.
+### Google Maps API Limits
+Google Maps provides 28,000 Dynamic Map loads per month in the free tier. The API key is optional for development but recommended for production. Monitor usage and upgrade if necessary.
 
 ## License
 
