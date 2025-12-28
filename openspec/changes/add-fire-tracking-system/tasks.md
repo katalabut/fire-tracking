@@ -1,21 +1,22 @@
 # Implementation Tasks
 
 ## 1. Project Setup
-- [ ] 1.1 Initialize Go module in `/backend` directory
-- [ ] 1.2 Install fast-app, chi, and database dependencies
-- [ ] 1.3 Initialize Next.js project in `/frontend` directory with TypeScript
-- [ ] 1.4 Set up Tailwind CSS and shadcn/ui
-- [ ] 1.5 Create Docker Compose file for PostgreSQL with PostGIS
-- [ ] 1.6 Set up environment variable structure for both projects
+- [ ] 1.1 Create Docker Compose file for PostgreSQL 15 with PostGIS 3.4
+- [ ] 1.2 Create .env.example files for backend and frontend
+- [ ] 1.3 Initialize Go module in `/backend` directory
+- [ ] 1.4 Install fast-app, chi, and PostgreSQL driver (pgx)
+- [ ] 1.5 Initialize Next.js project in `/frontend` directory with TypeScript
+- [ ] 1.6 Set up Tailwind CSS and shadcn/ui
 
 ## 2. Database Setup
-- [ ] 2.1 Create database migration files
-- [ ] 2.2 Implement users table migration
-- [ ] 2.3 Implement fires table with PostGIS GEOGRAPHY type
-- [ ] 2.4 Implement comments table
-- [ ] 2.5 Implement sessions table
-- [ ] 2.6 Add spatial index on fires.location
-- [ ] 2.7 Create migration runner in backend
+- [ ] 2.1 Start PostgreSQL with Docker Compose
+- [ ] 2.2 Create database migration files structure
+- [ ] 2.3 Implement 001_create_users.sql migration
+- [ ] 2.4 Implement 002_create_fires.sql with PostGIS GEOGRAPHY type
+- [ ] 2.5 Implement 003_create_comments.sql
+- [ ] 2.6 Implement 004_create_sessions.sql
+- [ ] 2.7 Add spatial index on fires.location
+- [ ] 2.8 Create migration runner in backend using golang-migrate or custom solution
 
 ## 3. Backend - Core Infrastructure
 - [ ] 3.1 Set up fast-app application with logger and config

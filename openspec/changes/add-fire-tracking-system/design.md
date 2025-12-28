@@ -285,11 +285,18 @@ backend/
 This is a new system, no migration needed.
 
 Initial setup steps:
-1. Set up PostgreSQL with PostGIS extension
-2. Run database migrations
+1. Run `docker-compose up -d` to start PostgreSQL with PostGIS
+2. Run database migrations from backend
 3. Set environment variables (DB connection, Mapbox API key)
-4. Deploy backend
-5. Deploy frontend with backend API URL
+4. Start backend with `go run cmd/server/main.go`
+5. Start frontend with `npm run dev`
+
+Docker Compose provides:
+- PostgreSQL 15 with PostGIS 3.4 extension
+- Database automatically initialized with PostGIS
+- Persistent volume for data
+- Port 5432 exposed for local development
+- pgAdmin 4 for database management (optional)
 
 ## Open Questions
 
